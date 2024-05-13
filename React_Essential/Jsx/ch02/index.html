@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React Dynamic content</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        let date1 = "Monday";
+        let date2 = "Tuesday";
+        let date3 = "Wednesday";
+
+        ReactDOM.render(
+            <ul>
+                <li>{date1}</li>
+                <li>{date2}</li>
+                <li>{date3.toUpperCase()}</li>  
+            </ul>,
+            document.getElementById("root")
+        )
+    </script>
+    
+</body>
+</html>
