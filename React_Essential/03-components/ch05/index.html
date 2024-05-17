@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"> </div>
+    <script type="text/babel">
+        function Header (props) {
+            console.log(props)
+            return(
+                <header>
+                    <h1>{props.name} React Components</h1>
+                </header>                
+            )
+        }
+        function Main (props) {
+            return(
+                <section>
+                   <ul>
+                          {dishes.map((dish) => <li>{dish}</li>)}
+                    </ul>
+                </section>
+            )
+        };
+
+        function Footer (props) {
+            return(
+                <footer>
+                    Copyright {props.year}
+                </footer>
+            )
+        }
+        function App() {
+            return (
+                <div>
+                    <Header name="Web Dev"/>
+                    <Main adjective="Basics of"/>
+                    <Footer year={new Date().getFullYear()} />
+                </div>
+            )
+        }
+
+        const dishes = [
+            "Black bean soup",
+            "Marcroni and Cheese",
+            "Salmon and Potatoes"
+        ];
+
+        ReactDOM.render(
+            <App />,
+            document.getElementById("root")
+        )
+
+    </script>
+    
+</body>
+</html>
